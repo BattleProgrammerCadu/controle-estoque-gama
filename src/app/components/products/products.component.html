@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-4">
+      <table class="table table-bordered" *ngIf="products.length>0;else productsElse">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Preço</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody> 
+          <tr *ngFor="let product of products">
+            <th scope="row">{{product.id}}</th>
+            <td >{{product.nome}}</td>
+            <td>{{product.descricao}}</td>
+            <td>{{product.preco.toString() | currency}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="purchase(product)">Comprar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #productsElse>
+        <p>Ainda não há produtos cadastrados</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

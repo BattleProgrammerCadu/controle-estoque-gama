@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <span class="anchor" id="formUserEdit"></span>
+      <h3>Teoricamente um login</h3>
+      <hr class="my-2">
+      <div class="card card-outline-secondary">
+        <div class="card-header">
+          <h3 class="mb-0">Informações do Cliente</h3>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="name" [(ngModel)]="cliente.nome">
+            </div>
+            <div class="form-group ">
+              <button type="button" class="btn btn-primary mb-2"(click)="add()">Confirmar</button>
+            </div>
+        </form>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

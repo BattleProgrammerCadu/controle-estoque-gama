@@ -1,20 +1,25 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Product } from '../interfaces/Product';
-import { ProductService } from '../services/ProductService';
+import { Product } from 'src/app/models/Product';
+import { ProductService } from 'src/app/services/ProductService';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-inventory',
+  templateUrl: './inventory.component.html',
+  styleUrls: ['./inventory.component.css']
 })
-export class ProductsComponent implements OnInit {
-  idCount: number = 0;
+export class InventoryComponent implements OnInit {
+
+  idCount: number = 1;
   product: Product = {} as Product;
   productSet: Number = 0;
+
   @Input() products: Product[] = [];
   @Output() productsChange = new EventEmitter();
 
-  constructor() { }
+  
+
+  constructor() {
+   }
 
   ngOnInit(): void {
     this.products = ProductService.list();

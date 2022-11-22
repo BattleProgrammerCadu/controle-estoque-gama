@@ -1,0 +1,35 @@
+
+<div class="container">
+    <div class="row">
+        <p>Olá, {{clientOrder.nome}} </p>
+      <div class="col-12 my-4">
+        <table class="table table-bordered" *ngIf="productList.length>0;else productsElse">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id Produto</th>
+              <th scope="col">Nome do Produto</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Preço</th>
+              <th scope="col" colspan="2">Cliente</th>
+              
+            </tr>
+          </thead>
+          <tbody> 
+            <tr *ngFor="let product of productList">
+              <th scope="row">{{product.id}}</th>
+              <td >{{product.nome}}</td>
+              <td>{{product.descricao}}</td>
+              <td>{{product.preco.toString() | currency}}</td>
+              <td>{{clientOrder.id}}</td>
+              <td></td>
+            </tr>
+          </tbody>
+          <p><strong>Total: </strong> {{total  | currency}}</p>
+        </table>
+
+        <ng-template #productsElse>
+          <p>Ainda não há produtos no carrinho</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>

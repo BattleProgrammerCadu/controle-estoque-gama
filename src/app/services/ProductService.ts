@@ -1,8 +1,14 @@
-import { Product } from "../interfaces/Product";
+import { Product } from "../models/Product";
 
 export class ProductService{
     
-    private static productList: Product[] = [];
+    private static productList: Product[] = [{
+        id: 55,
+        nome: 'Chainsaw Man',
+        descricao: 'é um mangá japonês escrito e ilustrado por Tatsuki Fujimoto',
+        preco: 60
+    }];
+
 
     public static list(): Product[]{
         return this.productList;
